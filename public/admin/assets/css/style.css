@@ -143,3 +143,9 @@ table .spinner-border {
     font-weight: 600 !important;
     color: black !important;
 }
+#flag-red{
+    color: rgb(192, 35, 4, 1) !important;
+}
+#flag-black{
+    color: rgb(0, 0, 0, 1) !important;
+}

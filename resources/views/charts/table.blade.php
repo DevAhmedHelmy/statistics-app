@@ -89,14 +89,14 @@
                          if (row.flag == 0) {
                              html = "<a  href='javascript:void(0)' id='flag-" + row.id +
                                  "'onClick='updateFlag(" + row.id +
-                                 ")'>" + "<img src='{{ asset('admin/app-assets/images/question-red.webp') }}' style='width: 20px;height: 20px;'>" + "</a>" +
+                                 ")'>" + "<i class='fa-regular fa-flag fa-lg' id='flag-black'></i>" + "</a>" +
                                  "<span class='spinner-border text-secondary d-none'  role='status'  id='flagspinner-" +
                                  row.id +
                                  "'>" + "</span>";
                          } else {
                              html = "<a  href='javascript:void(0)'  id='flag-" + row.id +
                                  "'onClick='updateFlag(" + row.id +
-                                 ")'><img src='{{ asset('admin/app-assets/images/question-1.png') }}' style='width: 20px;height: 20px;'></a>" +
+                                 ")'><i class='fa-solid fa-flag fa-lg' id='flag-red'></i></a>" +
                                  "<span class='spinner-border text-secondary d-none'  role='status'  id='flagspinner-" +
                                  row.id +
                                  "'>" + "</span>";
