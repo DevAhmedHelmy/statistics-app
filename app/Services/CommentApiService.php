@@ -14,7 +14,7 @@ class CommentApiService
     use HandleFilterRequest;
     private function getCommentApi()
     {
-        return (new CommentApiFilter());
+         return (new CommentApiFilter());
     }
     public function getComments()
     {
@@ -68,17 +68,18 @@ class CommentApiService
     }
     public function getDataMonthly()
     {
-        $start_date = Carbon::now()->subMonth(11);
-        $end_date = Carbon::now();
+        $start_date = Carbon::now()->subMonth(11)->format('Y-m-d');
+        $end_date = Carbon::now()->format('Y-m-d');
         $period = collect(CarbonPeriod::create($start_date, '1 month', $end_date))->map(function ($date) {
             return $date->format('Y-m-d');
         })->toArray();
         $commentsMonthly = $this->getCommentApi()->whereBetween('sn_amenddate', [$start_date, $end_date])
-            ->select(DB::raw('sn_year as year'), DB::raw('sn_month as month'), 'r_rate', DB::raw('count(*) as count'))
+            ->select(DB::raw('sn_year as year'), DB::raw('sn_month as month'),  'r_rate', DB::raw('count(*) as count'))
             ->where('r_rate', '!=', 'mixed')
             ->orderBy('count', 'desc')
-            ->groupBy('year', 'month', 'r_rate')
+            ->groupBy('sn_month', 'sn_year', 'r_rate')
             ->get();
+
         $trendChartData = HelperController::trendHandelArr('monthly', $period, $commentsMonthly);
         return $trendChartData;
     }

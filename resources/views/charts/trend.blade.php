@@ -213,8 +213,9 @@
                     enabled: false
                 },
                stroke: {
-                    show: false,
-                    curve: 'straight'
+                    show: true,
+                    curve: 'straight',
+                        width: 1,
                 },
                 fill: {
                     type: 'gradient',
