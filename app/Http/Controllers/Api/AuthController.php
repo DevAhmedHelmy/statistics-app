@@ -2,26 +2,24 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\TokenRepository;
-use Laravel\Passport\RefreshTokenRepository;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
         $input = $request->only(['name', 'email', 'password']);
-
         $validate_data = [
             'name' => 'required|string|min:4',
             'email' => 'required|email',
             'password' => 'required|min:8',
         ];
-
         $validator = Validator::make($input, $validate_data);
 
         if ($validator->fails()) {
@@ -31,17 +29,15 @@ class AuthController extends Controller
                 'errors' => $validator->errors()
             ]);
         }
-
         $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'password' => Hash::make($input['password'])
+            // 'password' => Hash::make($input['password'])
+            'password' => $input['password']
         ]);
+        $token = $user->createToken('passport_token')->accessToken;
+        return $this->respondWithToken($token, $user);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'User registered succesfully, Use Login method to receive token.'
-        ], 200);
     }
 
     /**
@@ -56,7 +52,7 @@ class AuthController extends Controller
 
         $validate_data = [
             'email' => 'required|email',
-            'password' => 'required|min:8',
+            'password' => 'required',
         ];
 
         $validator = Validator::make($input, $validate_data);
@@ -67,12 +63,12 @@ class AuthController extends Controller
                 'message' => 'Username Or password Is Invaild.',
             ]);
         }
-
+        $user = User::where([['email', $request->email], ['password', $request->password]])->first();
         // authentication attempt
-        if (auth()->attempt($input)) {
+        if ($user) {
+            Auth::login($user);
             $token = auth()->user()->createToken('passport_token')->accessToken;
             return $this->respondWithToken($token, auth()->user());
-
         } else {
             return response()->json([
                 'success' => false,
@@ -86,7 +82,7 @@ class AuthController extends Controller
      *
      * @return json
      */
-    public function userDetail()
+    public function user()
     {
         return response()->json([
             'success' => true,
@@ -107,35 +103,18 @@ class AuthController extends Controller
         // logout from only current device
         $tokenRepository = app(TokenRepository::class);
         $tokenRepository->revokeAccessToken($access_token->id);
-
-        // use this method to logout from all devices
-        // $refreshTokenRepository = app(RefreshTokenRepository::class);
-        // $refreshTokenRepository->revokeRefreshTokensByAccessTokenId($$access_token->id);
-
         return response()->json([
             'success' => true,
             'message' => 'User logout successfully.'
         ], 200);
     }
 
-    protected function respondWithToken($token,$user)
+    protected function respondWithToken($token, $user)
     {
-
-
         return response()->json([
 
             'success' => true,
-            'data' => $user,
             'access_token' => $token,
-            'token_type' => 'bearer',
-            "role" => 'admin',
-            "ability" => [
-                [
-                    "action" => 'manage',
-                    "subject" => 'all',
-                ],
-            ],
-
-        ]);
+        ], 200);
     }
 }
