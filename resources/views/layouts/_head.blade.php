@@ -52,4 +52,9 @@
         href="{{ asset('admin') }}/app-assets/css/plugins/extensions/ext-component-toastr.min.css">
     {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">  --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/assets/css/style.css">
+    <link rel="stylesheet" type="text/css"
+    href="{{ asset('admin') }}/app-assets/css/plugins/extensions/ext-component-sweet-alerts.min.css">
+{{-- END: Custom CSS --}}
+    <script src="{{ asset('admin') }}/app-assets/vendors/js/vendors.min.js"></script>
+    <script src="{{ asset('admin') }}/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
 </head>
