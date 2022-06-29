@@ -45,9 +45,9 @@
                             <div class="mb-1">
                                 <label class="form-label" for="contact-info-icon">Phone</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="text" id="contact-info-icon"
+                                    <input type="number" id="contact-info-icon"
                                         class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                        placeholder="Phone" required>
+                                        placeholder="Phone">
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
