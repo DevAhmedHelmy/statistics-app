@@ -17,7 +17,7 @@
                                 <div class="input-group input-group-merge">
                                     <input type="text" id="first-name-icon"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
-                                        placeholder="User Name" value="{{ $user->name }}">
+                                        placeholder="User Name" value="{{ $user->name }}" required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                                 <div class="input-group input-group-merge">
                                     <input type="email" id="email-id-icon"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        placeholder="Email" value="{{ $user->email }}">
+                                        placeholder="Email" value="{{ $user->email }}" required>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -46,7 +46,7 @@
                             <div class="mb-1">
                                 <label class="form-label" for="contact-info-icon">Phone</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="text" id="contact-info-icon"
+                                    <input type="number" id="contact-info-icon"
                                         class="form-control @error('phone') is-invalid @enderror" name="phone"
                                         placeholder="Phone" value="{{ $user->phone }}">
                                     @error('phone')
