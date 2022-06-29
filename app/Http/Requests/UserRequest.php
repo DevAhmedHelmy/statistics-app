@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => ($this->isMethod('post')) ? 'required|string|email|max:255|unique:users' : 'required|string|email|max:255|unique:users,id' . $this->id,
+            'email' => ($this->isMethod('post')) ? 'required|email:rfc,dns|max:255|unique:users' : 'required|email:rfc,dns|max:255|unique:users,id' . $this->id,
             'password' => ($this->isMethod('post')) ? 'required|string|min:8' : 'nullable',
             'phone' => 'nullable|numeric',
         ];

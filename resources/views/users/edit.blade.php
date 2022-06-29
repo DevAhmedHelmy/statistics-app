@@ -4,7 +4,7 @@
     <div class="col-md-12 col-12">
         <div class="card px-1 py-1">
             <div class="card-header">
-                <h4 class="card-title">Add New User</h4>
+                <h4 class="card-title">Edit User: {{ $user->name }}  Profile</h4>
             </div>
             <div class="card-body">
                 <form class="form form-vertical " action="{{ route('users.update', $user->id) }}" method="POST">

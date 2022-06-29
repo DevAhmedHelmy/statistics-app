@@ -35,7 +35,7 @@
 
             <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
                         data-feather="moon"></i></a></li>
-            <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon"
+            {{--  <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon"
                         data-feather="search"></i></a>
                 <div class="search-input">
                     <div class="search-input-icon"><i data-feather="search"></i></div>
@@ -44,8 +44,8 @@
                     <div class="search-input-close"><i data-feather="x"></i></div>
                     <ul class="search-list search-list-main"></ul>
                 </div>
-            </li>
-            <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#"
+            </li>  --}}
+            {{--  <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#"
                     data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span
                         class="badge rounded-pill bg-danger badge-up">5</span></a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
@@ -149,7 +149,7 @@
                     <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all
                             notifications</a></li>
                 </ul>
-            </li>
+            </li>  --}}
             @auth
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
                         id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -161,22 +161,24 @@
                                 alt="avatar" height="40" width="40"><span
                                 class="avatar-status-online"></span></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item"
-                            href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                        <a class="dropdown-item"
+                            href="{{ route('users.edit',auth()->user()->id) }}"><i class="me-50" data-feather="user"></i> Profile</a>
+                            {{--  <a
                             class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i>
                             Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50"
                                 data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i
-                                class="me-50" data-feather="message-square"></i> Chats</a>
-                        <div class="dropdown-divider"></div>
+                                class="me-50" data-feather="message-square"></i> Chats</a>  --}}
+                        {{--  <div class="dropdown-divider"></div>  --}}
 
-                        <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50"
+                        {{--  <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50"
                                 data-feather="settings"></i>
-                            Settings</a>
+                            Settings</a>  --}}
 
 
-                        <a class="dropdown-item" href="page-pricing.html"><i class="me-50"
+                        {{--  <a class="dropdown-item" href="page-pricing.html"><i class="me-50"
                                 data-feather="credit-card"></i>
-                            Pricing</a>
+                            Pricing</a>  --}}
                         <a class="log-out-btn dropdown-item" href="#"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();"> <i
                                 class="me-50" data-feather="power"></i> Logout </a>
