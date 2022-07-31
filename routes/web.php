@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\CommentApiController;
 
 /*
@@ -43,6 +45,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('comments/updateFlag', [CommentApiController::class, 'updateFlag'])->name('comments.updateFlag');
     Route::post('comments/updateBookmark', [CommentApiController::class, 'updateBookmark'])->name('comments.updateBookmark');
 
+    Route::get('upload', [UploadController::class, 'index'])->name('upload.index');
+    Route::post('upload', [UploadController::class, 'store'])->name('upload.store');
+
+
     Route::resource('users', UserController::class);
+
+
+
+
 });
 
