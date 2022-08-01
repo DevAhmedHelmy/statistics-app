@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Services\CommentApiService;
-use App\Http\Controllers\HelperController;
+use App\Traits\HandleFilterRequest;
 use App\Services\CommentTopicService;
 use App\Services\CommentCategoryService;
+use App\Http\Controllers\HelperController;
 
 
 class HomeController extends Controller
 {
+    use HandleFilterRequest;
     private $topicService, $commentService, $commentCategoryService;
     public function __construct(
         CommentTopicService $topicService,
@@ -50,12 +52,12 @@ class HomeController extends Controller
         // dd($topTopics);
         // heatmap Data
         $heatmapData = $this->getHeatMapData();
-
+        $breadcrumb = $this->breadcrumb();
         // data for filters
         $colors = HelperController::getColors();
         $clients = DB::table('clients')->select('c_id', 'c_acronym')->get();
         $services = DB::table('services')->select('s_id', 's_name')->get();
-        return view('home', compact('overAllComments', 'chunksCount', 'negativeChunks', 'positiveChunks', 'neutralChunks', 'colors', 'clients', 'services', 'categoryChartData', 'trendChartData', 'topics', 'topicPositive', 'topicNegative', 'categories', 'heatmapData','topTopics'));
+        return view('home', compact('overAllComments', 'chunksCount', 'negativeChunks', 'positiveChunks', 'neutralChunks', 'colors', 'clients', 'services', 'categoryChartData', 'trendChartData', 'topics', 'topicPositive', 'topicNegative', 'categories', 'heatmapData', 'topTopics', 'breadcrumb'));
     }
 
     public function getDataYearly()
@@ -195,5 +197,26 @@ class HomeController extends Controller
     public function getHeatMapComments()
     {
         return $this->commentCategoryService->getHeatMapComments();
+    }
+
+    public function breadcrumb()
+    {
+        $text = 'Showing results for ';
+
+        if ($this->checkFilterParams('client_id') && $this->checkFilterParams('service_id')) {
+            $client = DB::table('clients')->where('c_id', request()->filter['client_id'])->first();
+            $service = DB::table('services')->where('s_id', request()->filter['service_id'])->first();
+            $text .= $service->s_name  . ' , ' . $client->c_acronym;
+        } else if ($this->checkFilterParams('service_id')) {
+            $service = DB::table('services')->where('s_id', request()->filter['service_id'])->first();
+            $text .= $service->s_name;
+        } else if ($this->checkFilterParams('client_id')) {
+            $client = DB::table('clients')->where('c_id', request()->filter['client_id'])->first();
+            $text .= $client->c_acronym;
+        } else {
+            $text .= ' all Services';
+        }
+
+        return $text;
     }
 }
