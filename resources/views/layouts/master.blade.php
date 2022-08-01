@@ -22,6 +22,7 @@
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
             <div class="content-header row">
+                 <p class="main-p">showing results for "all services/Outpatient/Inpatient"</p>
             </div>
             <div class="content-body">
                  @include('layouts._message')
