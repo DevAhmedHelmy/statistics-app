@@ -201,8 +201,8 @@ div.dataTables_info {
 }
 
 table .spinner-border {
-    width: 1rem !important;
-    height: 1rem !important;
+    width: 1.15rem !important;
+    height: 1.15rem !important;
 }
 .page-item.active .page-link {
     background-color: #36bbc1 !important;
