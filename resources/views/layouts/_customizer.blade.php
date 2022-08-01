@@ -12,7 +12,7 @@
         </div>
 
         <hr />
-        @if (request()->route('home'))
+        @if ( request()->route()->getName() == 'home')
             @include('layouts.search-form')
         @endif
         <hr>

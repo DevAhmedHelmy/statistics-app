@@ -206,9 +206,11 @@
 
                      if (data.status == 'success') {
                          toastr.success(data.message);
-                         $('#bookmark-' + id).removeClass('d-none');
-                         $('#comment_table').DataTable().ajax.reload();
-                         $('#bookspinner-' + id).addClass('d-none');
+                         $('#comment_table').DataTable().ajax.reload(()=>{
+
+                             $('#bookspinner-' + id).addClass('d-none');
+                             $('#bookmark-' + id).removeClass('d-none');
+                         });
 
                      } else {
                          toastr.error(data.message);
@@ -239,9 +241,11 @@
                  success: function(data) {
                      if (data.status == 'success') {
                          toastr.success(data.message);
-                         $('#flag-' + id).removeClass('d-none');
-                         $('#comment_table').DataTable().ajax.reload();
-                         $('#flagspinner-' + id).addClass('d-none');
+                         $('#comment_table').DataTable().ajax.reload(()=>{
+                             $('#flag-' + id).removeClass('d-none');
+
+                             $('#flagspinner-' + id).addClass('d-none');
+                         });
 
                      } else {
                          toastr.error(data.message);
