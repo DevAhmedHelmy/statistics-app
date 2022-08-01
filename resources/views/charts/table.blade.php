@@ -58,7 +58,7 @@
                          var topics = row.topics;
                          var html = '';
                          topics.map(function(topic) {
-                             html = '<b style="color:#333">' + topic.t_name +
+                             html = '<b class="td-b">' + topic.t_name +
                                  '</b>: ' + topic.t_type;
                          })
                          return html;

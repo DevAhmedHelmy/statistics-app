@@ -208,6 +208,9 @@ div.dataTables_filter label {
 div.dataTables_info {
     font-size: 11px;
 }
+table .td-b{
+color:#333
+}
 
 table .spinner-border {
     width: 1rem !important;
@@ -235,7 +238,9 @@ table .spinner-border {
 .dark-layout h3,
 .dark-layout h4,
 .dark-layout h5,
-.dark-layout h6 {
+.dark-layout h6,
+.dark-layout table .td-b {
     color: #fafafa !important;
     font-family: "Open Sans", sans-serif;
 }
+
