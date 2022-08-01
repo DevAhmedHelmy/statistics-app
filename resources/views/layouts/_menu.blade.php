@@ -22,9 +22,8 @@
      <div class="shadow-bottom"></div>
      <div class="main-menu-content">
          <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-             <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i
-                         data-feather="home"></i><span class="menu-title text-truncate"
-                         data-i18n="Dashboards">Dashboards</span> </a>
+             <li class=" nav-item"><a class="d-flex align-items-center" href=""><i data-feather="home"></i><span
+                         class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span> </a>
                  <ul class="menu-content">
                      <li @class([
                          'active' =>
@@ -37,8 +36,8 @@
                  </ul>
              </li>
 
-             <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i
-                         data-feather="home"></i><span class="menu-title text-truncate"
+             <li class=" nav-item"><a class="d-flex align-items-center" href=""><i
+                         data-feather='settings'></i><span class="menu-title text-truncate"
                          data-i18n="Dashboards">Setup</span></a>
                  <ul class="menu-content">
 
@@ -77,7 +76,7 @@
 
                  </ul>
              </li>
-             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+             {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                          data-feather="users"></i><span class="menu-title text-truncate"
                          data-i18n="Users">Users</span> </a>
                  <ul class="menu-content">
@@ -99,7 +98,7 @@
                      </li>
 
                  </ul>
-             </li>
+             </li> --}}
 
 
          </ul>

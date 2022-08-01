@@ -2,15 +2,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description"
-        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
+    <meta name="description" content="Comments Dashboard.">
+    <meta name="keywords" content="Comments Dashboard">
+    <meta name="author" content="Health Links">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard ecommerce - Vuexy - Bootstrap HTML admin template</title>
-    <link rel="apple-touch-icon" href="{{ asset('admin') }}/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin') }}/app-assets/images/ico/favicon.ico">
+    <title>Comments Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin') }}/app-assets/images/diamond.jpeg">
 
 
     <link rel="stylesheet" href="{{ asset('admin') }}/assets/css/font-awesom/all.min.css">
@@ -36,8 +33,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/app-assets/css/components.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/app-assets/css/themes/dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/app-assets/css/themes/bordered-layout.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin') }}/app-assets/css/themes/semi-dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/app-assets/css/themes/semi-dark-layout.min.css">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('admin') }}/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <link rel="stylesheet" type="text/css"
@@ -50,11 +46,10 @@
         href="{{ asset('admin') }}/app-assets/css/plugins/charts/chart-apex.min.css">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('admin') }}/app-assets/css/plugins/extensions/ext-component-toastr.min.css">
-    {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">  --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/assets/css/style.css">
     <link rel="stylesheet" type="text/css"
-    href="{{ asset('admin') }}/app-assets/css/plugins/extensions/ext-component-sweet-alerts.min.css">
-{{-- END: Custom CSS --}}
+        href="{{ asset('admin') }}/app-assets/css/plugins/extensions/ext-component-sweet-alerts.min.css">
+    {{-- END: Custom CSS --}}
     <script src="{{ asset('admin') }}/app-assets/vendors/js/vendors.min.js"></script>
     <script src="{{ asset('admin') }}/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
 </head>

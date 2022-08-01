@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
@@ -25,6 +26,15 @@ Route::view('app','layouts.app');
 // })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+
+Route::get('clear-cache', function() {
+    Artisan::call('key:generate');
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    return "Cache is cleared";
+});
 
 Route::middleware(['auth'])->group(function () {
 

@@ -36,7 +36,7 @@
         </div>
 
         <div>
-            <button class="btn btn-success" type="submit">Filter</button>
+            <button class="btn btn-primary" type="submit">Filter</button>
         </div>
     </form>
 </div>

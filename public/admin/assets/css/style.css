@@ -54,9 +54,15 @@ body .apexcharts-legend-text {
 }
 .trendheader {
 }
+
+/* colors */
 .customizer .customizer-toggle,
 .btn-primary {
-    background: #36bbc1;
+    background: #36bbc1 !important;
+    border-color: #36bbc1 !important;
+}
+.btn-primary:hover:not(.disabled):not(:disabled) {
+    box-shadow: 0 8px 25px -8px #36bbc1;
 }
 .btn-outline-primary {
     border: 1px solid #36bbc1 !important;
@@ -69,45 +75,21 @@ body .apexcharts-legend-text {
     color: #36bbc1;
     background-color: rgb(54, 187, 193, 0.2) !important;
 }
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #36bbc1 !important;
+}
 /*
 ** start css for dashboard
 */
 
 .card-statistics .statistics-body {
-    padding: 12px 18px!important;
+    padding: 12px 18px !important;
 }
 
 .card-body {
     padding: 0.5rem !important;
-}
-
-table td,
-table th {
-    font-size: 11px !important;
-}
-select[name="comment_table_length"],
-div.dataTables_filter input {
-    background-color: #fafafa;
-    height: 28px;
-    font-size: 12px;
-    line-height: 9px;
-    /* border-radius: 0; */
-    border-left-width: 2px;
-    width: 50px;
-}
-div.dataTables_length label,
-div.dataTables_filter label {
-    font-size: 11px;
-    font-weight: bold !important;
-}
-div.dataTables_info,
-.page-item .page-link {
-    font-size: 11px;
-}
-
-table .spinner-border {
-    width: 1rem !important;
-    height: 1rem !important;
 }
 
 .testimonial .header h3 {
@@ -131,62 +113,122 @@ table .spinner-border {
 .neutral-avatar {
     background-color: rgb(174, 189, 196) !important;
 }
-.card-statistics .statistics-body .neutral-avatar .avatar-content img{
+.card-statistics .statistics-body .neutral-avatar .avatar-content img {
     width: 35px !important;
     height: 35px !important;
 }
-.my-auto h4  {
+.my-auto h4 {
     color: black !important;
     font-weight: bolder !important;
-    font-size:14px!important;
+    font-size: 14px !important;
 }
-.my-auto p{
+.my-auto p {
     font-weight: 600 !important;
     color: black !important;
 }
-#flag-red{
+#flag-red {
     color: rgb(192, 35, 4, 1) !important;
 }
-#flag-black{
+#flag-black {
     color: rgb(0, 0, 0, 1) !important;
 }
 
-.main-menu.menu-light{
+.main-menu.menu-light {
     background-color: rgb(35 125 129) !important;
 }
-.main-menu.menu-light .navigation{
-    background:unset !important;
+.main-menu.menu-light .navigation {
+    background: unset !important;
 }
-.vertical-layout.vertical-menu-modern .main-menu .navigation li a{
+.vertical-layout.vertical-menu-modern .main-menu .navigation li a {
     color: #fff;
 }
-.main-menu.menu-light .navigation>li.open:not(.menu-item-closing)>a, .main-menu.menu-light .navigation>li.sidebar-group-active>a{
-    background:unset !important;
+.main-menu.menu-light .navigation > li.open:not(.menu-item-closing) > a,
+.main-menu.menu-light .navigation > li.sidebar-group-active > a {
+    background: unset !important;
     color: #fff;
-
 }
 
-.vertical-layout.vertical-menu-modern.menu-expanded .main-menu .navigation li.has-sub>a:after{
-    background-image:url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23fff\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\' class=\'feather feather-chevron-right\'%3E%3Cpolyline points=\'9 18 15 12 9 6\'%3E%3C/polyline%3E%3C/svg%3E')!important;
+.vertical-layout.vertical-menu-modern.menu-expanded
+    .main-menu
+    .navigation
+    li.has-sub
+    > a:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
 }
-.main-menu .navbar-header .modern-nav-toggle{
+.main-menu .navbar-header .modern-nav-toggle {
     color: #fff !important;
 }
-.main-menu .navbar-header .navbar-brand .brand-text{
+.main-menu .navbar-header .navbar-brand .brand-text {
     color: #fff !important;
 }
-.main-menu.menu-light .navigation>li ul .active{
-box-shadow: 0 0 10px 1px rgb(35 125 129) !important;
+.main-menu.menu-light .navigation > li ul .active {
+    box-shadow: 0 0 10px 1px rgb(35 125 129) !important;
 }
- .main-menu .navbar-header .navbar-brand .brand-text img{
+.main-menu .navbar-header .navbar-brand .brand-text img {
     width: 125px !important;
- }
+}
 
-
- .input-group.has-validation>.dropdown-toggle:nth-last-child(n+4), .input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu){
-        border-radius: 0.357rem !important;
-        border: 1px solid red;
- }
-.dropdown-menu .dropdown-item{
+.dropdown-menu .dropdown-item {
     width: 100% !important;
 }
+
+.auth-wrapper .brand-logo {
+    margin: 0rem 0 0rem 0 !important;
+}
+
+/* data table */
+table td,
+table th {
+    font-size: 11px !important;
+}
+select[name="comment_table_length"],
+div.dataTables_filter input {
+    background-color: #fafafa;
+    height: 28px;
+    font-size: 12px;
+    line-height: 9px;
+    /* border-radius: 0; */
+    border-left-width: 2px;
+    width: 50px;
+}
+div.dataTables_length label,
+div.dataTables_filter label {
+    font-size: 11px;
+    font-weight: bold !important;
+}
+div.dataTables_info {
+    font-size: 11px;
+}
+
+table .spinner-border {
+    width: 1rem !important;
+    height: 1rem !important;
+}
+.page-item.active .page-link {
+    background-color: #36bbc1 !important;
+}
+.page-item.active .page-link:hover {
+    color: #fff !important;
+}
+.page-item .page-link:hover {
+    color: #36bbc1 !important;
+}
+.page-item .page-link {
+    font-size: 14px !important;
+}
+/* .dark-layout  */
+
+.dark-layout p,
+.dark-layout span,
+.dark-layout a,
+.dark-layout h1,
+.dark-layout h2,
+.dark-layout h3,
+.dark-layout h4,
+.dark-layout h5,
+.dark-layout h6 {
+    color: #fafafa !important;
+    font-family: "Open Sans", sans-serif;
+}
+
+

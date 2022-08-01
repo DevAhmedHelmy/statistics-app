@@ -3,11 +3,9 @@
         <h6>Chunks Pie Chart</h6>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-12 flex">
-                <div id="donut-chart"></div>
-            </div>
-        </div>
+
+        <div id="donut-chart"></div>
+
     </div>
 </div>
 <div class="modal fade show" id="chunkModal" tabindex="-1" aria-labelledby="pricingModalTitle" aria-modal="true"
@@ -107,8 +105,7 @@
                                         type: types[index]
                                     }
                                 },
-                                columns: [
-                                    {
+                                columns: [{
                                         data: 'sn_comment'
                                     },
                                     {

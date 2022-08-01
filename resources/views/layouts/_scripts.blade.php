@@ -1,4 +1,4 @@
-{{--  <script src="{{ asset('admin') }}/app-assets/vendors/js/vendors.min.js"></script>  --}}
+
 <script src="{{ asset('admin') }}/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
 <script src="{{ asset('admin') }}/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
 <script src="{{ asset('admin') }}/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
@@ -19,8 +19,6 @@
 <script src="{{ asset('admin') }}/app-assets/js/core/app-menu.min.js"></script>
 <script src="{{ asset('admin') }}/app-assets/js/core/app.min.js"></script>
 <script src="{{ asset('admin') }}/app-assets/js/scripts/customizer.min.js"></script>
-
-
 <script src="{{ asset('admin') }}/app-assets/js/scripts/tables/table-datatables-basic.js"></script>
 <script src="{{ asset('admin') }}/app-assets/js/scripts/forms/form-validation.js"></script>
 <script>
