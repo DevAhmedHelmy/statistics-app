@@ -58,7 +58,7 @@
                          var topics = row.topics;
                          var html = '';
                          topics.map(function(topic) {
-                             html = '<b style="color:#333">' + topic.t_name +
+                             html = '<b class="td-b">' + topic.t_name +
                                  '</b>: ' + topic.t_type;
                          })
                          return html;
@@ -72,15 +72,15 @@
                              html1 = "<a  href='javascript:void(0)' class='ml-2' id='bookmark-" + row.id +
                                  "'onClick='updateBookmark(" + row.id +
                                  ")'>" + "<img src='{{ asset('admin/app-assets/images/bookmark-1.png') }}' style='width: 20px;height: 20px;'>" + "</a>" +
-                                 "<span class='spinner-border text-secondary d-none'  role='status'  id='bookspinner-" +
+                                 "<span class='spinner-border text-secondary ml-2 mr-2 d-none'  role='status'  id='bookspinner-" +
                                  row.id +
                                  "'>" + "</span>";
 
                          } else {
-                             html1 = "<a  href='javascript:void(0)' id='bookmark-" + row.id +
+                             html1 = "<a  href='javascript:void(0)' class='ml-2' id='bookmark-" + row.id +
                                  "'onClick='updateBookmark(" + row.id +
                                  ")'><img src='{{ asset('admin/app-assets/images/bookmark-2.png') }}' style='width: 20px;height: 20px;'></a>" +
-                                 "<span class='spinner-border text-secondary d-none'  role='status'  id='bookspinner-" +
+                                 "<span class='spinner-border text-secondary ml-2 mr-2 d-none'  role='status'  id='bookspinner-" +
                                  row.id +
                                  "'>" + "</span>";
 
@@ -101,7 +101,7 @@
                                  row.id +
                                  "'>" + "</span>";
                          }
-                         return html1 + ' &nbsp ' + html;
+                         return "<div class='d-flex justify-content-between align-items-center'>"+ html1 + '' + html+'</div>' ;
                      },
                  }
              ],
@@ -208,7 +208,7 @@
                          toastr.success(data.message);
                          $('#comment_table').DataTable().ajax.reload(()=>{
 
-                             $('#bookspinner-' + id).addClass('d-none');
+                             {{--  $('#bookspinner-' + id).addClass('d-none');  --}}
                              $('#bookmark-' + id).removeClass('d-none');
                          });
 
